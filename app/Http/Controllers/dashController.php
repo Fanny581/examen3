@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\empleado;
 
-class empleadoController extends Controller
+class dashController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,9 @@ class empleadoController extends Controller
      */
     public function index()
     {
-        $empleado = empleado::all();
-        return view('empleado.index')->with('empleado', $empleado);}
+        return view("dash.index");
+        //
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,8 +24,7 @@ class empleadoController extends Controller
      */
     public function create()
     {
-    
-        return view('empleado.create');
+        //
     }
 
     /**
@@ -36,19 +35,8 @@ class empleadoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-        'nombres'=> 'required',
-        'apellido'=> 'required',
-          'cargo'=> 'required',
-           'salario'=> 'required',
-         'fechaingreso'=> 'required',
-          'fechasalida'=> 'nullable',
-          'motivosalida'=> 'nullable',
-    ]);
-    empleado::create($data);
-
-    return redirect('/empleado')->with('success', 'empleado creado correctamente.');
-}
+        //
+    }
 
     /**
      * Display the specified resource.
@@ -68,9 +56,7 @@ class empleadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    { $empleado = empleado::findOrFail($id);
-        return view('empleado.update')->with('empleado', $empleado);
-       
+    {
         //
     }
 
@@ -83,19 +69,7 @@ class empleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
-            'nombres'=> 'required',
-        'apellido'=> 'required',
-          'cargo'=> 'required',
-           'salario'=> 'required',
-         'fechaingreso'=> 'required',
-          'fechasalida'=> 'nullable',
-          'motivosalida'=> 'nullable',
-             ]);
-             empleado::whereId($id)->update($data);
-    
-            return redirect('/empleado')->with('success', 'empleado modificado correctamente.');
-      //
+        //
     }
 
     /**
@@ -106,11 +80,6 @@ class empleadoController extends Controller
      */
     public function destroy($id)
     {
-        
-        $empleado = empleado::findOrFail($id);
-        $empleado->delete(); 
-        return redirect('/empleado')->with('success', 'producto eliminado correctamente.');
-
         //
     }
 }

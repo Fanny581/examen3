@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'producto')
+@section('title', 'Empleados')
 
 @section('content_header')
-    <h1>Editar Producto</h1>
+<h1>Registrar Empleado</h1>
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
                 <div class="col col-lg-2">
                 </div>
                 <div class="col col-lg-8">
-                    <label for="txtNombre" class="visually-hidden">nombres:</label>
+                    <label for="txtNombre" class="visually-hidden">nombres</label>
                     <input type="text" class="form-control" name="nombres" value="{{$empleado->nombres}}">
                 </div>
                 <div class="col col-lg-2">
@@ -28,8 +28,8 @@
                 <div class="col col-lg-2">
                 </div>
                 <div class="col col-lg-8">
-                    <label for="txtNombre" class="visually-hidden">apellido:</label>
-                    <textarea type="text" class="form-control" rows="3" name="apellido" >{{$empleado->apellido}}</textarea>
+                    <label for="txtNombre" class="visually-hidden">apellido</label>
+                    <input type="text" class="form-control" name="apellido" value="{{$empleado->apellido}}">
                 </div>
                 <div class="col col-lg-2">
                 </div>
@@ -40,28 +40,63 @@
             <div class="row">
                 <div class="col col-lg-2">
                 </div>
-                <div class="col col-lg-4">
-                    <label for="idCliente" class="visually-hidden">cargo:</label>
+                <div class="col col-lg-8">
+                    <label for="txtNombre" class="visually-hidden">Cargo</label>
                     <input type="text" class="form-control" name="cargo" value="{{$empleado->cargo}}">
                 </div>
+                <div class="col col-lg-2">
                 </div>
-                <div class="col col-lg-4">
-                    <label for="idCliente" class="visually-hidden">salario:</label>
-                    <input type="text" class="form-control" name="salario" value="{{$empleado->salario}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col col-lg-2">
                 </div>
-                <div class="col col-lg-5">
-                    <label for="idCliente" class="visually-hidden">fechaingreso:</label>
-                    <input type="text" class="form-control" name="fechaingreso" value="{{$empleado->fechaingreso}}">
+                <div class="col col-lg-8">
+                    <label for="txtNombre" class="visually-hidden">salario</label>
+                    <input type="number" class="form-control" name="salario" value="{{$empleado->salario}}">
                 </div>
-                <div class="col col-lg-5">
-                    <label for="idCliente" class="visually-hidden">fechasalida:</label>
-                    <input type="text" class="form-control" name="fechasalida" value="{{$empleado->fechasalida}}">
+                <div class="col col-lg-2">
                 </div>
-                <div class="col col-lg-5">
-                    <label for="idCliente" class="visually-hidden">motivosalida:</label>
-                    <input type="text" class="form-control" name="motivosalida" value="{{$empleado->motivosalida}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col col-lg-2">
                 </div>
-                <div class="col col-lg-6">
+                <div class="col col-lg-8">
+                    <label for="txtNombre" class="visually-hidden">fechaingreso</label>
+                    <input type="date" class="form-control" name="fechaingreso" value="{{$empleado->fechaingreso}}">
+                </div>
+                <div class="col col-lg-2">
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="row">
+                <div class="col col-lg-2">
+                </div>
+                <div class="col col-lg-8">
+                    <label for="txtNombre" class="visually-hidden">fechasalida</label>
+                    <input type="date" class="form-control" name="fechasalida" value="{{$empleado->fechasalida}}">
+                </div>
+                <div class="col col-lg-2">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col col-lg-2">
+                </div>
+                <div class="col col-lg-8">
+                    <label for="txtNombre" class="visually-hidden">motivosalida:</label>
+                    <textarea type="text" class="form-control" rows="3" name="motivosalida">{{$empleado->motivosalida}}</textarea>
+                </div>
+                <div class="col col-lg-2">
                 </div>
             </div>
         </div>
@@ -78,6 +113,7 @@
             </div>
         </div>
     </form>
+</div>
 
     @if ($errors->any())
         <div class="alert alert-danger">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\empleadoController;
+use App\Http\Controllers\dashController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,4 @@ route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('/empleado', empleadoController::class );
+Route::middleware(['auth:sanctum', 'verified'])->resource('dash', dashController::class);

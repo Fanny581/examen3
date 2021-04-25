@@ -1,7 +1,9 @@
+@extends('adminlte::page')
+
 @section('title', 'Dashboard')
 
 @section('content_header')
-<h1> empleado </h1>
+<h1> Empeados </h1>
 @stop
 
 @section('content')
@@ -37,7 +39,7 @@
             <td> {{$empleado->fechasalida}}</td>
             <td> {{$empleado->motivosalida}}</td>
             <td>
-                <a href="{{route('empleados.edit', $empleado->id)}}" class="btn btn-success btn-sm">Editar</a>
+                <a href="{{route('empleado.edit', $empleado->id)}}" class="btn btn-success btn-sm">Editar</a>
                 <form action="{{route('empleado.destroy', $empleado->id)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
